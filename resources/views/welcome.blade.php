@@ -83,11 +83,11 @@
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="{{url('/social_login/facebook')}}">Facebook</a>
+                    <a href="{{url('/social_login/google')}}">Google</a>
+                    <a href="{{url('/social_login/twitter')}}">Twitter</a>
+                    <a href="{{url('/social_login/linkedin')}}">Linkedin</a>
+                    <a href="{{url('/social_login/github')}}">GitHub</a>
                 </div>
             </div>
         </div>

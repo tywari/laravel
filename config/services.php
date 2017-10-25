@@ -35,4 +35,27 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'facebook' => [
+       'client_id'     => env('FACEBOOK_ID'),
+       'client_secret' => env('FACEBOOK_SECRET'),
+       'redirect'      => env('APP_URL').'/social_login/facebook/callback',
+   ],
+
+   'google' => [
+       'client_id'     => env('GOOGLE_ID'),
+       'client_secret' => env('GOOGLE_SECRET'),
+       'redirect'      => env('APP_URL').'/social_login/google/callback',
+   ],
+
+   'linkedin' => [
+       'client_id'     => env('LINKEDIN_ID'),
+       'client_secret' => env('LINKEDIN_SECRET'),
+       'redirect'      => env('APP_URL').'/social_login/linkedin/callback',
+   ],
+   'twitter' => [
+       'client_id'     => env('TWITTER_ID'),
+       'client_secret' => env('TWITTER_SECRET'),
+       'redirect'      => env('APP_URL').'/social_login/twitter/callback',
+   ],
+
 ];

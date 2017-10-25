@@ -22,3 +22,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/pdf', 'TestController@index');
 
 Route::post('/convert_currency', 'TestController@convertCurrency');
+
+Route::get('/social_login/{provider}','Auth\RegisterController@redirectToProvider');
+
+Route::get('/social_login/{provider}/callback', 'Auth\RegisterController@handleProviderCallback');

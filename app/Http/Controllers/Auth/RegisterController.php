@@ -6,6 +6,7 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Socialite;
 
 class RegisterController extends Controller
 {
@@ -67,5 +68,49 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+
+
+public function redirectToProvider($provider)
+    {
+       return Socialite::driver($provider)->with(['auth_type'=>'rerequest'])->redirect();
+    }
+
+    public function handleProviderCallback($provider)
+    {
+        $user = Socialite::driver($provider)->user();
+        $data = [
+                'name' => $user->name,
+                'email' => $user->email,
+                'provider' => $provider,
+                'provider_id' => $user->id,
+                'image' => $user->avatar_original,
+                'email_verified' => 1
+            ];
+
+        $authUser = $this->findOrCreateUser($data);
+        if ($authUser)
+        {
+
+            auth()->login($authUser);
+            return redirect('/home');
+        }else
+        {
+            $this->redirect('/login');
+        }
+    }
+
+    public function findOrCreateUser($data)
+    {
+        $authUser = User::where('provider_id','=', $data['provider_id'])
+                        ->orWhere('email','=',$data['email'])->first();
+
+        if ($authUser) {
+            return $authUser;
+        }else
+        {
+          return $user = User::create($data);
+
+        }
     }
 }

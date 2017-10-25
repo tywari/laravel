@@ -1,95 +1,120 @@
 <!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Lala World invoice</title>
+    <link rel="stylesheet" href="{{ url('public/css/main.css') }}" media="all" />
+</head>
 
-        <title>Laravel</title>
+<body>
+    <div class="invoice-box">
+        <table cellpadding="0" cellspacing="0">
+            <tr class="top">
+                <td colspan="2">
+                    <table>
+                        <tr>
+                            <td class="title">
+                                <img src="https://lalaworld.io/public/skin/images/icons/green-logoo.png" style="width:100%; max-width:300px;">
+                            </td>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+                            <td>
+                                Invoice #: 123<br>
+                                Created: January 1, 2015<br>
+                                Due: February 1, 2015
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
+            <tr class="information">
+                <td colspan="2">
+                    <table>
+                        <tr>
+                            <td>
+                                Sparksuite, Inc.<br>
+                                12345 Sunny Road<br>
+                                Sunnyville, CA 12345
+                            </td>
 
-            .full-height {
-                height: 100vh;
-            }
+                            <td>
+                                Acme Corp.<br>
+                                John Doe<br>
+                                john@example.com
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+            <tr class="heading">
+                <td>
+                    Payment Method
+                </td>
 
-            .position-ref {
-                position: relative;
-            }
+                <td>
+                    Check #
+                </td>
+            </tr>
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+            <tr class="details">
+                <td>
+                    Check
+                </td>
 
-            .content {
-                text-align: center;
-            }
+                <td>
+                    1000
+                </td>
+            </tr>
 
-            .title {
-                font-size: 84px;
-            }
+            <tr class="heading">
+                <td>
+                    Item
+                </td>
 
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
+                <td>
+                    Price
+                </td>
+            </tr>
 
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
+            <tr class="item">
+                <td>
+                    Website design
+                </td>
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
+                <td>
+                    $300.00
+                </td>
+            </tr>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
-        </div>
-    </body>
+            <tr class="item">
+                <td>
+                    Hosting (3 months)
+                </td>
+
+                <td>
+                    $75.00
+                </td>
+            </tr>
+
+            <tr class="item last">
+                <td>
+                    Domain name (1 year)
+                </td>
+
+                <td>
+                    $10.00
+                </td>
+            </tr>
+
+            <tr class="total">
+                <td></td>
+
+                <td>
+                   Total: $385.00
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
 </html>

@@ -8,10 +8,10 @@ class TestController extends Controller
 {
   public function index()
     {
-      $pdf = PDF::loadView('pdf.invoice');
+      $pdf = PDF::loadFile(public_path().'/tst.html');
       return $pdf->stream('invoice.pdf');
+      // return view('pdf.invoice');
     }
-}
 
 public function convertCurrency($amount, $from, $to){
 
@@ -23,4 +23,5 @@ public function convertCurrency($amount, $from, $to){
 
 	return number_format(round($converted, 3),2);
 
+  }
 }

@@ -18,7 +18,7 @@ class User extends Authenticatable implements TwoFactorAuthenticatableContract
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','provider','provider_id','image','email_verified',
     ];
 
     /**
@@ -29,5 +29,5 @@ class User extends Authenticatable implements TwoFactorAuthenticatableContract
     protected $hidden = [
         'password', 'remember_token','two_factor_options'
     ];
-    
+
 }
